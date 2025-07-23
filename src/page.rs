@@ -9,6 +9,7 @@ static mut ALLOC_START: usize = 0 ;
 const PAGE_ORDER: usize = 12 ;
 pub const PAGE_SIZE: usize = 1 << 12 ;
 
+// Align it up to "order" bits
 pub const fn align_val(val: usize , order: usize) -> usize{
     let o = (1usize << order) - 1 ;
     (val + o) & !o
