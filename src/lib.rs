@@ -34,6 +34,8 @@ macro_rules! println
 }
 
 #[unsafe(no_mangle)] // no mangling
+// Exception handling personality --> this function is the interface that Rust runtime uses to interact with the exception handling
+// We manually override this so that it does nothing
 extern "C" fn eh_personality() {
 
 }
